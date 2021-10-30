@@ -1,5 +1,3 @@
-import getCity from "./city";
-
 // Asynchronous function to get the weather
 async function getWeather(location) {
     // Stores whatever is returned from the 'fetch' promise into a variable 'results'
@@ -10,7 +8,7 @@ async function getWeather(location) {
     const response = await results.json();
 
     // Finally, logs the contents of 'response' into console
-    console.log(response);
+    return response;
 }
 
 export default getWeather;

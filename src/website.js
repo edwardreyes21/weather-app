@@ -1,3 +1,5 @@
+import {getFahrenheit, getCelsius} from './temperature'
+
 function initializeHeader() {
     const header = document.querySelector('.header');
 
@@ -8,8 +10,17 @@ function initializeHeader() {
     header.appendChild(header_text);
 }
 
-function initializeContent() {
+function initializeContent(weather_info) {
+    const content = document.querySelector('.content');
 
+    const location_text = document.createElement('h1');
+    location_text.textContent = weather_info.name;
+
+    const degrees = document.createElement('h2');
+    degrees.textContent = getFahrenheit(weather_info.main.temp);
+
+    content.appendChild(location_text);
+    content.appendChild(degrees);
 }
 
 function initializeFooter() {
