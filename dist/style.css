@@ -33,3 +33,7 @@ body {
     background: grey;
     padding:10px;
 }
+
+form {
+    margin-bottom: 15px;
+}
