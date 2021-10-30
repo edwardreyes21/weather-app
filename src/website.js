@@ -13,14 +13,38 @@ function initializeHeader() {
 function initializeContent(weather_info) {
     const content = document.querySelector('.content');
 
+    // Deletes the previous instance of the weather report
+    let old_div = content.querySelector('.weather-info');
+    if (old_div) {
+        content.removeChild(old_div);
+    }
+
+    // Creates a new div to represent weather info
+    const info_div = document.createElement('div');
+    info_div.classList.add('weather-info');
+
+    // Creates elements to represent certain aspects of the weather
     const location_text = document.createElement('h1');
     location_text.textContent = weather_info.name;
 
-    const degrees = document.createElement('h2');
-    degrees.textContent = getFahrenheit(weather_info.main.temp);
+    // Temperature section
+    const temperature_div = document.createElement('div');
+    temperature_div.classList.add('weather-div');
 
-    content.appendChild(location_text);
-    content.appendChild(degrees);
+    const temperature_header = document.createElement('h2');
+    temperature_header.textContent = 'Degrees: ';
+
+    const temperature = document.createElement('h2');
+    temperature.textContent = Math.round(getFahrenheit(weather_info.main.temp));
+
+    temperature_div.appendChild(temperature_header);
+    temperature_div.appendChild(temperature);
+
+    // Adds info to the div
+    info_div.appendChild(location_text);
+    info_div.appendChild(temperature_div);
+
+    content.appendChild(info_div);
 }
 
 function initializeFooter() {
