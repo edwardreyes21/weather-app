@@ -40,9 +40,27 @@ function initializeContent(weather_info) {
     temperature_div.appendChild(temperature_header);
     temperature_div.appendChild(temperature);
 
+    // Wind section
+    const wind_div = document.createElement('div');
+    wind_div.classList.add('weather-div');
+
+    const wind_header = document.createElement('h2');
+    wind_header.textContent = 'Wind speed: ';
+
+    const wind_speed = document.createElement('h2');
+    wind_speed.textContent = weather_info.wind.speed;
+
+    const wind_measurement = document.createElement('h2');
+    wind_measurement.textContent = 'meters/s';
+
+    wind_div.appendChild(wind_header);
+    wind_div.appendChild(wind_speed);
+    wind_div.appendChild(wind_measurement);
+
     // Adds info to the div
     info_div.appendChild(location_text);
     info_div.appendChild(temperature_div);
+    info_div.appendChild(wind_div);
 
     content.appendChild(info_div);
 }
