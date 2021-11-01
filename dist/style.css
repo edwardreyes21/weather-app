@@ -39,10 +39,29 @@ form {
 }
 
 .weather-info {
+    background-color: honeydew;
     margin-top: 40px;
+    padding: 20px 0px 20px 0px;
 }
 
-.weather-div {
+.temperature-div {
+    margin: 15px 0px 5px 0px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.wind-div {
+    margin: 5px 0px 5px 0px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.desc-div {
+    margin: 5px 0px 5px 0px;
     justify-content: center;
     display: flex;
     flex-direction: row;
