@@ -37,8 +37,12 @@ function initializeContent(weather_info) {
     const temperature = document.createElement('h2');
     temperature.textContent = Math.round(getFahrenheit(weather_info.main.temp));
 
+    const temperature_measurement = document.createElement('h2');
+    temperature_measurement.textContent = 'degrees (fahrenheit)';
+
     temperature_div.appendChild(temperature_header);
     temperature_div.appendChild(temperature);
+    temperature_div.appendChild(temperature_measurement);
 
     // Wind section
     const wind_div = document.createElement('div');
