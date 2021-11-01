@@ -29,7 +29,7 @@ function initializeContent(weather_info) {
 
     // Temperature section
     const temperature_div = document.createElement('div');
-    temperature_div.classList.add('weather-div');
+    temperature_div.classList.add('temperature-div');
 
     const temperature_header = document.createElement('h2');
     temperature_header.textContent = 'Degrees: ';
@@ -46,7 +46,7 @@ function initializeContent(weather_info) {
 
     // Wind section
     const wind_div = document.createElement('div');
-    wind_div.classList.add('weather-div');
+    wind_div.classList.add('wind-div');
 
     const wind_header = document.createElement('h2');
     wind_header.textContent = 'Wind speed: ';
@@ -61,10 +61,20 @@ function initializeContent(weather_info) {
     wind_div.appendChild(wind_speed);
     wind_div.appendChild(wind_measurement);
 
+    // Weather description section
+    const desc_div = document.createElement('div');
+    desc_div.classList.add('desc-div');
+
+    const description = document.createElement('h2');
+    description.textContent = `Humidity is at ${weather_info.main.humidity}% and the sky can be described as a ${weather_info.weather[0].description}.`;
+    
+    desc_div.appendChild(description);
+
     // Adds info to the div
     info_div.appendChild(location_text);
     info_div.appendChild(temperature_div);
     info_div.appendChild(wind_div);
+    info_div.appendChild(desc_div);
 
     content.appendChild(info_div);
 }
